@@ -4,7 +4,7 @@ from datetime import datetime
 try:
  f = json.loads(open("setup.json", "r").read())
  token = f['token']
-expect:
+except:
  print("setup.json 파일을 불러오는데 오류가 발생했어요 파일이 존재하거나 읽기 권한을 확인해주세요")
  exit()
 bot = commands.Bot(command_prefix="%", intents=discord.Intents.all())
@@ -31,7 +31,7 @@ if token == "insert token here!":
  setup.json 파일을 열어 수정해주세요
  """)
  exit()
-elif toke == "":
+elif token == "":
  print("토큰 값이 비어있는 것 같아요 제대로된 토큰을 넣어주세요")
 else:
  bot.run(f['token'])
