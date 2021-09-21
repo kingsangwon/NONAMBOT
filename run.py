@@ -5,10 +5,10 @@ from discord.ext import commands
 ls = "================================================"
 BotError = BotError()
 try:
-    f = json.loads(open("setup.json", "r").read())
+    f = json.loads(open("configuration.json", "r").read())
     token = f['token']
 except:
-    print("setup.json 파일을 불러오는데 오류가 발생했어요 파일이 존재하거나 읽기 권한을 확인해주세요")
+    print("configuration.json 파일을 불러오는데 오류가 발생했어요 파일이 존재하거나 읽기 권한을 확인해주세요")
     exit()
 bot = commands.Bot(command_prefix="%", intents=discord.Intents.all())
 print(ls)
