@@ -1,6 +1,5 @@
 from description import BotError
 import discord, os, json
-from discord.ext.commands.bot import Bot
 from discord.ext import commands
 
 ls = "================================================"
