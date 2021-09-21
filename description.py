@@ -19,7 +19,7 @@ class BotError:
                     Error!!!
         초기 설정이 되어있지 않은 모양이에요 
 https://discord.com/developers/applications 이곳을 방문한 뒤
-        setup.json 파일을 열어 수정해주세요
+        configuration.json 파일을 열어 수정해주세요
 {ls}
 """)
     def blanktoken(self):
