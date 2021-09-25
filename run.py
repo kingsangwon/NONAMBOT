@@ -34,9 +34,7 @@ elif token == "":
     BotError.blanktoken()
 else:
     try:
-        bot.run(f['token'])
+        bot.run(token)
     except discord.errors.LoginFailure:
         BotError.unknown()
         exit()
-    except:
-        bot
