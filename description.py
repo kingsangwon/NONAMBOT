@@ -1,19 +1,23 @@
-import traceback, time
+import traceback
+import time
+
 ls = "================================================"
-tajiri = 0
+lines = 0
+
 def ErrorLog(error: str): 
     current_time = time.strftime("%Y.%m.%d/%H:%M:%S", time.localtime(time.time())) 
     with open("Log.txt", "a") as f: 
         f.write(f"[{current_time}] - {error}\n")
 
-def gongback(gb):
-    global tajiri
-    while(tajiri < gb):
+def newline(gb):
+    global lines
+    while(lines < gb):
         print("")
-        tajiri = tajiri + 1
+        lines = lines + 1
+
 class BotError:
     def deftoken(self):
-        gongback(30)
+        newline(30)
         print(f"""
 {ls}
                     Error!!!
@@ -22,22 +26,25 @@ https://discord.com/developers/applications 이곳을 방문한 뒤
         configuration.json 파일을 열어 수정해주세요
 {ls}
 """)
+
     def blanktoken(self):
-        gongback(30)
+        newline(30)
         print(f"""
 {ls}
         토큰 값이 비어있는 것 같아요 제대로된 토큰을 넣어주세요
 {ls}
 """)
+
     def loginfail(self):
-        gongback(30)
+        newline(30)
         print(f"""
 {ls}
         디스코드 로그인에 실패했어요. 토큰이 알맞은지, 공백이 없는지 확인해주세요.
 {ls}
 """)
+
     def unknown(self):
-        gongback(30)
+        newline(30)
         err = traceback.format_exc()
         print(f"""
 {ls}

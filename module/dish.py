@@ -1,7 +1,8 @@
 import requests
 import json
 
-def dishFromDate(ymd, sc):
+
+def dish_from_date(ymd, sc):
     url = 'https://open.neis.go.kr/hub/mealServiceDietInfo'
 
     params = {
