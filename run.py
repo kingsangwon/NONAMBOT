@@ -4,9 +4,10 @@ from discord.ext import commands
 import os
 import json
 
+error = BotError()
+bot = commands.Bot(command_prefix="%", intents=discord.Intents.all())
 
 ls = "================================================"
-BotError = BotError()
 
 try:
     f = json.loads(open("configuration.json", "r").read())
@@ -14,8 +15,6 @@ try:
 except:
     print("configuration.json 파일을 불러오는데 오류가 발생했어요 파일이 존재하거나 읽기 권한을 확인해주세요")
     exit()
-
-bot = commands.Bot(command_prefix="%", intents=discord.Intents.all())
 
 print(ls)
 
@@ -39,9 +38,9 @@ try:
     bot.run(token)
 except discord.errors.LoginFailure:
     if token == "insert token here!":
-        BotError.deftoken()
+        error.deftoken()
     elif token == "":
-        BotError.blanktoken()
+        error.blanktoken()
     else:
-        BotError.unknown()
+        error.unknown()
     exit()
