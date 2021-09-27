@@ -1,5 +1,4 @@
 import requests
-import json
 
 
 def dish_from_date(ymd, sc):
