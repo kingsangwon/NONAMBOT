@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 
-bot=commands.Bot(commands_prefix='!', intents=discord.Intents.all())
+bot=commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 for cogs in os.listdir('cogs'):
     if cogs.endswith('.py'):
